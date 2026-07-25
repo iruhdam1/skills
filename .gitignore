@@ -3,3 +3,5 @@ __pycache__/
 .agents/
 .claude/
 skills-lock.json
+notes/
+CLAUDE.md
