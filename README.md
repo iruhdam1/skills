@@ -8,7 +8,9 @@ Agent skills for designers, product managers, and builders shipping with AI.
 
 Agents don't have design judgment. They build a page at 1280 and call it done while it breaks at 390. They'll "clean up" your optically-aligned logo row into a grid that looks worse. And every new session, you re-type the same context you typed yesterday.
 
-These skills bake that judgment — and your context — into the agent. Built from 15+ shipped AI prototypes by [Madhuri Maram](https://madhurimaram.com).
+These skills bake that judgment — and your context — into the agent.
+
+Built by [Madhuri Maram](https://madhurimaram.com), designing AI-native products since 2024 — most recently as Head of Design & Product at Aampe, an agentic MarTech company acquired by MoEngage. Everything here comes from shipped work: an LLM copy engine taken from ~70% to ~95% first-pass quality, 7+ agent-built tools in customers' hands, and a storefront run solo with agents. The full record is at [madhurimaram.com/work/ai](https://madhurimaram.com/work/ai).
 
 ## Install
 
