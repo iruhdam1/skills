@@ -1,6 +1,6 @@
 # Skills for designers who build
 
-[![skills.sh](https://skills.sh/b/iruhdam1/skills)](https://skills.sh/iruhdam1/skills)
+[![skills.sh](https://www.skills.sh/b/iruhdam1/skills)](https://skills.sh/iruhdam1/skills)
 
 ![Skills for designers who build](assets/hero.png)
 
