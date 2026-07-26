@@ -93,4 +93,4 @@ Either way the trick is the same: the context is baked in, and it compounds.
 
 ---
 
-Based on [Prefix-First Design](https://github.com/iruhdam1/prefix-first-design) — the full framework, with the frame pass, page ledgers, and monthly still-holds checks — by [Madhuri Maram](https://madhurimaram.com), built from 15+ shipped AI prototypes. The name comes from prompt caching: the prefix is the part of the context that doesn't change, and changing it means paying full cost again. Same rule, applied to design sessions.
+Based on [Prefix-First Design](https://github.com/iruhdam1/prefix-first-design) — the full framework, with the frame pass, page ledgers, and monthly still-holds checks — by [Madhuri Maram](https://madhurimaram.com), built from 15+ AI products and tools shipped since 2024. The name comes from prompt caching: the prefix is the part of the context that doesn't change, and changing it means paying full cost again. Same rule, applied to design sessions.
