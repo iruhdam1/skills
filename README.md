@@ -10,7 +10,7 @@ Agents don't have design judgment. They build a page at 1280 and call it done wh
 
 These skills bake that judgment — and your context — into the agent.
 
-Built by [Madhuri Maram](https://madhurimaram.com), designing AI-native products since 2024 — most recently as Head of Design & Product + Product Builder at Aampe, an agentic MarTech company acquired by MoEngage. Everything here comes from shipped work: an LLM copy engine's first-pass quality pushed from 70–75% to 90–95%, 7+ working prototypes validated with real customers, and Tiny Design Shop — a store of templates and browser tools she builds herself, run solo with agents. The full record is at [madhurimaram.com/work/ai](https://madhurimaram.com/work/ai).
+Built by [Madhuri Maram](https://madhurimaram.com), designing AI-native products since 2024 — most recently as Head of Design & Product + Product Builder at Aampe, an agentic MarTech company acquired by MoEngage. Everything here comes from shipped work: an LLM copy engine's first-pass quality pushed from 70–75% to 90–95% — with agent QA (Label Buddy) validating 100K copy lines behind it — 7+ working prototypes validated with real customers, and Tiny Design Shop — a store of templates and browser tools she builds herself, run solo with agents. The full record is at [madhurimaram.com/work/ai](https://madhurimaram.com/work/ai).
 
 ## Install
 
