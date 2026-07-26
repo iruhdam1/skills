@@ -40,7 +40,7 @@ Locked decisions from earlier sessions that this session builds on.
 
 ## Instructions for the agent
 
-**1. Read before you build.** If a close-out or brief exists (pasted in, or in the repo), read it first. Mirror the state back in 2–3 plain lines: where things stand, what's locked, what needs the human. Don't draft anything until the brief is held.
+**1. Read before you build.** If a close-out or brief exists (pasted in, or the newest file in `notes/`), read it first — check for it without being asked. Mirror the state back in 2–3 plain lines: where things stand, what's locked, what needs the human. Don't draft anything until the brief is held.
 
 **2. Grade the brief — warm roast, not bureaucrat.** One short pass, specific, then move on:
 
@@ -57,7 +57,7 @@ If two or more fields fail, don't ideate yet — sharpening the brief together i
 
 **5. Catch re-explaining.** If the human re-explains something already in the brief, flag it: "That's already in the brief — update it or use what's there?" Repeated context means the brief is too vague to hold. Offer to sharpen it.
 
-**6. Close out every session.** Before ending, output this — top half for the human to skim, bottom half for the next agent to follow:
+**6. Close out every session.** Before ending, output this — top half for the human to skim, bottom half for the next agent to follow. Stamp the date yourself from the machine's clock; never ask the human for it.
 
 ```
 ## Close-out — [date] — [session goal]
@@ -77,7 +77,12 @@ For the next agent:
 4. Needs the human: [items — or none]
 ```
 
-Paste it as message one of the next session. That's the whole trick: the context is baked in, and it compounds.
+Then offer to save it — one question, human picks:
+
+- **Save it for me** (default when working in a project folder): write it to `notes/close-out-YYYY-MM-DD.md`, dated from the machine's clock. Next session, the agent finds the newest close-out on its own — nothing to paste.
+- **I'll paste it**: the human carries it forward as message one of the next session.
+
+Either way the trick is the same: the context is baked in, and it compounds.
 
 ## When it goes wrong
 
