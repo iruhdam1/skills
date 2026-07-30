@@ -1,0 +1,6 @@
+%%{init: {'theme':'neutral'}}%%
+flowchart TD
+  Detect[Detect large repo] --> Bound[Sample harness roots only]
+  Bound --> Evidence[One to three signals per part]
+  Evidence --> Note[Note sample confidence]
+  Note --> Short[Short score and tasks in chat]

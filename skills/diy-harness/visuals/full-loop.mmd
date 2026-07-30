@@ -1,0 +1,8 @@
+%%{init: {'theme':'base','themeVariables':{'primaryColor':'#F5F5F5','primaryTextColor':'#111111','primaryBorderColor':'#222222','lineColor':'#333333','secondaryColor':'#EEEEEE','tertiaryColor':'#FFFFFF','background':'#FFFFFF','mainBkg':'#F5F5F5','nodeBorder':'#222222','clusterBkg':'#FFFFFF','titleColor':'#111111','edgeLabelBackground':'#FFFFFF'}}}%%
+flowchart LR
+  TurnA[Turn A: Audit] --> Score[Readiness score]
+  Score --> Tasks[Task list]
+  Tasks --> Pick[You pick tasks]
+  Pick --> TurnB[Turn B: Setup chosen]
+  TurnB --> Verify[Verify]
+  Verify --> Weekly[Weekly later]
