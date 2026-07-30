@@ -1,10 +1,10 @@
 # diy-harness — Eval checklist (maintainers)
 
-Manual rubric + fixture shapes. Run before calling the skill “ready.”
+Manual rubric + fixture shapes. Run before calling a prompt change “ready.”
 
 **Not** pasted by Copy skill on `/harness`. Lives next to `public-skill.md` for maintainers; ships to `skills/diy-harness/EVALS.md` when publishing the pack.
 
-**Publish gate:** do not publish to [iruhdam1/skills](https://github.com/iruhdam1/skills) until all 4 fixtures pass once on a capable agentic model (12/12 on each Turn A, plus choice-respect spot-check).
+**Pack status:** live on [iruhdam1/skills](https://github.com/iruhdam1/skills/tree/main/skills/diy-harness). Fixture dry-runs are still recommended before material prompt changes.
 
 ## Fixture shapes (run Turn A on each)
 
@@ -44,20 +44,19 @@ How to stub fixtures:
 - Exact token counts / dollar cost
 - Cross-host model router tests
 - Full design-lint CHECKS parity
-- Publishing to iruhdam1/skills (separate gate after evals pass)
 
 ## Who runs evals
 
 | Gate | Who | Bar |
 | --- | --- | --- |
 | Before **push to live** (Copy skill update on the website) | Agent or Madhuri | Rubric against prompt text + one real dry-run if time |
-| Before **publish to skills** | Agent or Madhuri | All 4 fixtures once; fix prompt until 12/12 |
+| Before **material skills-pack prompt change** | Agent or Madhuri | All 4 fixtures once; fix prompt until 12/12 |
 
 ## Dry-run log (fill when run)
 
 | Date | Fixture | Model / host | Score | 12/12? | Notes |
 | --- | --- | --- | --- | --- | --- |
-| 2026-07-30 | Prompt-text review | — | — | 12/12 | Static check of `public-skill.md` against rubric. Fixture dry-runs still required before skills publish. |
+| 2026-07-30 | Prompt-text review | — | — | 12/12 | Static check of lean `public-skill.md` against rubric. Pack already live; fixtures still recommended before next material change. |
 | | Tiny static | | | | |
 | | No-git / CMS | | | | |
 | | Already has pieces | | | | |
