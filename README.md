@@ -32,8 +32,9 @@ Your taste, on every run.
 - **[responsive-preview](./skills/responsive-preview/SKILL.md)** — See your page at mobile, tablet, and desktop before you ship it — labeled screenshots and a pass/warn/fail report.
 - **[design-lint](./skills/design-lint/SKILL.md)** — ESLint for design. A strict, judged QA pass with a fixed check catalog: layout, spacing, type, tokens, accessibility, responsive.
 - **[adjust-logos](./skills/adjust-logos/SKILL.md)** — Align logo rows optically, not mathematically — and stop agents from "fixing" the nudges that make them look right.
+- **[diy-harness](./skills/diy-harness/README.md)** — Audit a project, score harness readiness, pick tasks, then set up only what's missing so agents stop reinventing tokens and ship rituals.
 
-More soon.
+More soon — when a skill earns a place here.
 
 ---
 

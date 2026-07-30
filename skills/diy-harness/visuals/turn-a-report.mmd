@@ -1,0 +1,8 @@
+%%{init: {'theme':'base','themeVariables':{'primaryColor':'#F5F5F5','primaryTextColor':'#111111','primaryBorderColor':'#222222','lineColor':'#333333','secondaryColor':'#EEEEEE','tertiaryColor':'#FFFFFF','background':'#FFFFFF','mainBkg':'#F5F5F5','nodeBorder':'#222222','clusterBkg':'#FFFFFF','titleColor':'#111111','edgeLabelBackground':'#FFFFFF'}}}%%
+flowchart TD
+  Explore[Explore project] --> AuditFile[Write audit file]
+  AuditFile --> Report[Short chat report]
+  Report --> S[Score plus one line]
+  S --> T[Numbered tasks]
+  T --> All[Last option: All of the above]
+  All --> Stop[STOP - wait for you]
