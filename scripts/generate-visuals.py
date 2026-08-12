@@ -246,20 +246,100 @@ def save_responsive_preview(path: Path, fonts) -> None:
     img.save(path, optimize=True)
 
 
+# ---------------------------------------------------------------- ghost-wireframe
+
+def save_ghost_wireframe(path: Path, fonts) -> None:
+    img, d = canvas()
+    d.text((800, 70), "Skeleton UI · --ghost-* roles", fill=TEXT, font=fonts["title"], anchor="mm")
+    d.text((800, 125), "landing chrome and loading placeholders share one contract", fill=MUTED, font=fonts["body"], anchor="mm")
+
+    # Desktop ghost
+    dx, dy, dw, dh = 120, 200, 820, 520
+    d.rounded_rectangle([dx, dy, dx + dw, dy + dh], radius=18, fill="white", outline=BORDER, width=3)
+    d.rounded_rectangle([dx + 24, dy + 24, dx + 200, dy + 52], radius=6, fill=GHOST)
+    for i in range(3):
+        d.rounded_rectangle([dx + dw - 24 - (i + 1) * 90, dy + 28, dx + dw - 36 - i * 90, dy + 48], radius=4, fill=GHOST_SOFT)
+    d.rounded_rectangle([dx + 24, dy + 80, dx + dw - 24, dy + 220], radius=10, fill=PANEL)
+    ghost_lines(d, dx + 48, dy + 110, 400, 3, gap=28, h=14, widths=[0.85, 0.55, 0.7])
+    card_w = (dw - 72) / 3
+    for i in range(3):
+        cx = dx + 24 + i * (card_w + 12)
+        d.rounded_rectangle([cx, dy + 250, cx + card_w, dy + 470], radius=10, fill=GHOST_SOFT)
+        ghost_lines(d, cx + 20, dy + 280, card_w - 40, 4, gap=34, h=12)
+
+    # Mobile ghost
+    mx, my, mw, mh = 1020, 230, 420, 490
+    d.rounded_rectangle([mx, my, mx + mw, my + mh], radius=28, fill="white", outline=BORDER, width=3)
+    d.rounded_rectangle([mx + mw / 2 - 40, my + 16, mx + mw / 2 + 40, my + 28], radius=6, fill=BORDER)
+    d.rounded_rectangle([mx + 24, my + 56, mx + mw - 24, my + 180], radius=10, fill=PANEL)
+    ghost_lines(d, mx + 40, my + 210, mw - 80, 5, gap=36, h=14, widths=[0.9, 0.7, 0.85, 0.55, 0.75])
+    d.rounded_rectangle([mx + 24, my + 420, mx + mw - 24, my + 460], radius=10, fill=GHOST)
+
+    chip(d, 530, 760, "desktop · single", MUTED, PANEL, fonts["chip"])
+    chip(d, 1230, 760, "mobile · companion", MUTED, PANEL, fonts["chip"])
+    d.text((800, 850), "--ghost-fill · --ghost-muted · --ghost-accent", fill=MUTED, font=fonts["small"], anchor="mm")
+    img.save(path, optimize=True)
+
+
+# ---------------------------------------------------------------- website-launch-checklist-prompt
+
+def save_launch_checklist(path: Path, fonts) -> None:
+    img, d = canvas()
+    d.text((800, 70), "Pre-launch audit · gap board", fill=TEXT, font=fonts["title"], anchor="mm")
+    d.text((800, 125), "score the launch, fix the gaps, ship the snippets", fill=MUTED, font=fonts["body"], anchor="mm")
+
+    areas = [
+        ("Technical", PASS, PASS_BG, "pass"),
+        ("OpenGraph", WARN, WARN_BG, "warn"),
+        ("Agent ready", FAIL, FAIL_BG, "fail"),
+        ("AEO / llms", WARN, WARN_BG, "warn"),
+        ("Analytics", PASS, PASS_BG, "pass"),
+        ("Legal", PASS, PASS_BG, "pass"),
+    ]
+    cols = 3
+    card_w, card_h = 420, 220
+    ox, oy, gap = 120, 200, 40
+    for i, (title, color, bg, label) in enumerate(areas):
+        r, c = i // cols, i % cols
+        x = ox + c * (card_w + gap)
+        y = oy + r * (card_h + gap)
+        d.rounded_rectangle([x, y, x + card_w, y + card_h], radius=16, fill=PANEL, outline=BORDER, width=3)
+        d.text((x + 36, y + 40), title, fill=TEXT, font=fonts["h2"])
+        ghost_lines(d, x + 36, y + 100, card_w - 72, 3, gap=28, h=12, widths=[0.9, 0.65, 0.5])
+        chip(d, x + card_w - 90, y + card_h - 40, label, color, bg, fonts["chip"])
+
+    d.text((800, 850), "isitagentready · robots · sitemap · JSON-LD · /llms.txt", fill=MUTED, font=fonts["small"], anchor="mm")
+    img.save(path, optimize=True)
+
+
 # ---------------------------------------------------------------- hero
 
 def save_hero(path: Path, fonts) -> None:
-    img, d = canvas(1600, 720)
-    d.text((110, 150), "Skills for designers who build", fill=TEXT, font=fonts["hero_title"])
-    d.text((114, 270), "Bake the brief · preview responsively · lint the design · tune the logos", fill=MUTED, font=fonts["hero_sub"])
-    labels = ["bake-the-brief", "responsive-preview", "design-lint", "adjust-logos"]
-    x = 114
+    img, d = canvas(1600, 820)
+    d.text((110, 110), "Skills for designers who build", fill=TEXT, font=fonts["hero_title"])
+    d.text((114, 210), "Bake the brief · preview · lint · logos · harness · ghosts · launch", fill=MUTED, font=fonts["hero_sub"])
+    labels = [
+        "bake-the-brief",
+        "responsive-preview",
+        "design-lint",
+        "adjust-logos",
+        "diy-harness",
+        "ghost-wireframe",
+        "launch-checklist",
+    ]
+    x, y = 114, 320
+    row_h = 90
+    max_x = 1486
     for label in labels:
         tw = d.textlength(label, font=fonts["body"])
-        d.rounded_rectangle([x, 400, x + tw + 56, 470], radius=35, fill=PANEL, outline=BORDER, width=3)
-        d.text((x + 28 + tw / 2, 435), label, fill=TEXT, font=fonts["body"], anchor="mm")
-        x += tw + 88
-    ghost_lines(d, 114, 540, 1370, 3, gap=40, h=14, widths=[0.9, 0.65, 0.4])
+        chip_w = tw + 56
+        if x + chip_w > max_x:
+            x = 114
+            y += row_h
+        d.rounded_rectangle([x, y, x + chip_w, y + 70], radius=35, fill=PANEL, outline=BORDER, width=3)
+        d.text((x + 28 + tw / 2, y + 35), label, fill=TEXT, font=fonts["body"], anchor="mm")
+        x += chip_w + 24
+    ghost_lines(d, 114, y + 120, 1370, 3, gap=40, h=14, widths=[0.9, 0.65, 0.4])
     img.save(path, optimize=True)
 
 
@@ -270,6 +350,8 @@ def main() -> None:
     save_design_lint(SKILLS / "design-lint/visual.png", fonts)
     save_adjust_logos(SKILLS / "adjust-logos/visual.png", fonts)
     save_responsive_preview(SKILLS / "responsive-preview/visual.png", fonts)
+    save_ghost_wireframe(SKILLS / "ghost-wireframe/visual.png", fonts)
+    save_launch_checklist(SKILLS / "website-launch-checklist-prompt/visual.png", fonts)
     save_hero(ASSETS / "hero.png", fonts)
     print("Wrote skill visuals.")
 

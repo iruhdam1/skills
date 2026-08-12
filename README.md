@@ -33,9 +33,11 @@ Your taste, on every run.
 - **[design-lint](./skills/design-lint/SKILL.md)** — ESLint for design. A strict, judged QA pass with a fixed check catalog: layout, spacing, type, tokens, accessibility, responsive.
 - **[adjust-logos](./skills/adjust-logos/SKILL.md)** — Align logo rows optically, not mathematically — and stop agents from "fixing" the nudges that make them look right.
 - **[diy-harness](./skills/diy-harness/README.md)** — Audit a project, score harness readiness, pick tasks, then set up only what's missing so agents stop reinventing tokens and ship rituals.
-
-More soon — when a skill earns a place here.
+<!-- TDS-SYNC:START -->
+- **[ghost-wireframe](./skills/ghost-wireframe/SKILL.md)** — Skeleton UI / ghost wireframes with `--ghost-*` colour roles for landing chrome and loading states. Live tool at [Tiny Design Shop](https://tinydesignshop.com/tools/ghost-wireframe-generator).
+- **[website-launch-checklist-prompt](./skills/website-launch-checklist-prompt/SKILL.md)** — Pre-launch audit for SEO, OpenGraph, agent readiness, AEO, and compliance. Live tool at [Tiny Design Shop](https://tinydesignshop.com/tools/launch-checklist-prompt).
+<!-- TDS-SYNC:END -->
 
 ---
 
-The full Prefix-First Design framework behind bake-the-brief lives at [prefix-first-design](https://github.com/iruhdam1/prefix-first-design). The live side-by-side responsive viewer is at [tinydesignshop.com](https://tinydesignshop.com/tools/responsive-preview/).
+The full Prefix-First Design framework behind bake-the-brief lives at [prefix-first-design](https://github.com/iruhdam1/prefix-first-design). The live side-by-side responsive viewer is at [tinydesignshop.com](https://tinydesignshop.com/tools/responsive-preview/). Portable skills from Tiny Design Shop sync into this pack via the shop’s public-skills allowlist.
