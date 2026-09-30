@@ -19,7 +19,6 @@ Create a downloadable HTML presentation from the user's content, or adapt an exi
 
 ## Verify and hand off
 
-- Release status (2026-09-30): this pack is available before the website's phone-notes update. Create embedded notes now, but do not promise the deployed presenter will display them until that update is published. Keep separate backup notes in the meantime.
 - Run `node scripts/validate-deck.mjs /path/to/deck.html` when a Node runtime is available. It checks structure, size, dependencies, and notes; it does not execute the deck or prove compatibility.
 - When browser access is available, open the file, disable networking, and test every slide using both keyboard and visible controls. Check layout at the intended presentation size and a smaller laptop viewport. Test the uploaded presentation and phone notes only when the user has authorized that upload.
 - Distinguish completed static checks, completed browser checks, and checks unavailable in the current environment. Do not say the deck or AI-client integration was tested when it was not.
