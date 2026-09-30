@@ -1,6 +1,5 @@
 # Self-contained deck format
 
-Release status (2026-09-30): the phone-notes behavior below describes the prepared website update, which has not yet been published. The file format, local deck, and validator are usable now; keep separate backup notes until the deployed presenter supports importing them.
 
 The portable pack uses the convention below; the presenter can also attempt to control other HTML decks. Arbitrary custom navigation is not guaranteed compatible.
 
