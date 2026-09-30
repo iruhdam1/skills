@@ -312,6 +312,24 @@ def save_launch_checklist(path: Path, fonts) -> None:
     img.save(path, optimize=True)
 
 
+# ---------------------------------------------------------------- html-slide-presenter
+
+def save_html_slide_presenter(path: Path, fonts) -> None:
+    img, d = canvas()
+    d.text((800, 75), "HTML slides · your file, your tools", fill=TEXT, font=fonts["title"], anchor="mm")
+    d.text((800, 132), "Create a self-contained deck with embedded speaking notes", fill=MUTED, font=fonts["body"], anchor="mm")
+    d.rounded_rectangle([100, 240, 1030, 700], radius=16, fill="white", outline=BORDER, width=3)
+    d.text((150, 290), "One clear idea per slide", fill=TEXT, font=fonts["h2"])
+    ghost_lines(d, 150, 380, 740, 4, gap=46, h=18, widths=[0.9, 0.72, 0.84, 0.5])
+    chip(d, 565, 650, "deck.html", MUTED, PANEL, fonts["chip"])
+    phone_frame(d, 1140, 240, 320, 460, "embedded notes", fonts)
+    d.text((1170, 290), "Speaking text", fill=TEXT, font=fonts["small"])
+    ghost_lines(d, 1170, 345, 255, 6, gap=34, h=12)
+    chip(d, 1300, 650, "1 / 3", MUTED, PANEL, fonts["chip"])
+    d.text((800, 815), "Portable skill · keyboard navigation · local backup", fill=MUTED, font=fonts["body"], anchor="mm")
+    img.save(path, optimize=True)
+
+
 # ---------------------------------------------------------------- hero
 
 def save_hero(path: Path, fonts) -> None:
@@ -326,6 +344,7 @@ def save_hero(path: Path, fonts) -> None:
         "diy-harness",
         "ghost-wireframe",
         "launch-checklist",
+        "html-slide-presenter",
     ]
     x, y = 114, 320
     row_h = 90
@@ -352,6 +371,7 @@ def main() -> None:
     save_responsive_preview(SKILLS / "responsive-preview/visual.png", fonts)
     save_ghost_wireframe(SKILLS / "ghost-wireframe/visual.png", fonts)
     save_launch_checklist(SKILLS / "website-launch-checklist-prompt/visual.png", fonts)
+    save_html_slide_presenter(SKILLS / "html-slide-presenter/visual.png", fonts)
     save_hero(ASSETS / "hero.png", fonts)
     print("Wrote skill visuals.")
 

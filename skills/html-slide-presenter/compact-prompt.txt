@@ -1,0 +1,14 @@
+Create a complete, self-contained HTML slide deck using the content I provide. Use my audience, talk duration, and visual preferences; ask only for important missing context. Do not invent facts, quotes, or evidence. If I provide a deck, preserve its content and style unless I request changes.
+
+Return one downloadable UTF-8 .html file, no larger than 2,097,152 bytes. Inline all CSS and JavaScript and embed essential assets. Do not depend on external fonts, libraries, files, or network requests. Use readable, high-contrast slides with keyboard ArrowLeft/ArrowRight and Home navigation plus visible previous/next buttons.
+
+Use .slide elements in stable document order. Exactly one is active; hide the rest with hidden. Expose window.goToSlide(index), where index starts at zero, and set window.currentSlide plus document.documentElement.dataset.activeSlide whenever the slide changes. Dispatch a slidechange event after navigation. Hide all aside.notes elements from the audience.
+
+Inside each slide, add a script element with type="application/json" and class="slide-notes" containing {"title":"Slide title","script":"What I should say","notes":["Supporting cue"]}. Escape any literal closing script sequence in JSON. Keep notes concise and tied to my content.
+
+Check the complete file, navigation, note JSON, layout, and external dependencies. If browser access is available, test every slide with networking disabled; state which checks actually ran. Return the file and direct me to https://tinydesignshop.com/tools/html-slide-presenter to upload it manually, complete bot verification, choose expiry, and pair my phone. Do not upload for me. The browser presenter needs no account, app, or subscription; my AI provider's access and limits are separate. Phone synchronization needs internet; opening the saved HTML locally is the keyboard-controlled backup. Notes remain inspectable inside the file.
+
+My audience:
+My talk duration:
+My content:
+My visual preferences:
