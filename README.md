@@ -36,6 +36,7 @@ Your taste, on every run.
 <!-- TDS-SYNC:START -->
 - **[ghost-wireframe](./skills/ghost-wireframe/SKILL.md)** — Skeleton UI / ghost wireframes with `--ghost-*` colour roles for landing chrome and loading states. Live tool at [Tiny Design Shop](https://tinydesignshop.com/tools/ghost-wireframe-generator).
 - **[website-launch-checklist-prompt](./skills/website-launch-checklist-prompt/SKILL.md)** — Pre-launch audit for SEO, OpenGraph, agent readiness, AEO, and compliance. Live tool at [Tiny Design Shop](https://tinydesignshop.com/tools/launch-checklist-prompt).
+- **[html-slide-presenter](./skills/html-slide-presenter/SKILL.md)** — Create or adapt self-contained HTML slides with embedded speaker notes, then present with a phone remote at [Tiny Design Shop](https://tinydesignshop.com/tools/html-slide-presenter).
 <!-- TDS-SYNC:END -->
 
 ---
