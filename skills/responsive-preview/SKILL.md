@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Responsive Preview
 
-![The same page at 390, 820, and 1280](visual.png)
+![The same page at 390, 820 and 1280, with pass and warn results](visual.png)
 
 See your page the way your users will — before you ship it. Agents build at desktop width and call it done; this catches what breaks at 390 first.
 

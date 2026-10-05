@@ -5,3 +5,5 @@ __pycache__/
 skills-lock.json
 notes/
 CLAUDE.md
+node_modules/
+assets/fonts/

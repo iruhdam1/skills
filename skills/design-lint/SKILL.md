@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Design Lint
 
-![Ghost-column layout at 390 — before and after](visual.png)
+![design-lint findings for a page with an empty column at 390, plus a verdict](visual.png)
 
 ESLint for design. Agents ship pages that look right at 1280 and quietly break at 390 — an empty ghost column, metrics spread across dead space, a hero drifting off its grid. Each bug is small; together they're the difference between an interface that feels designed and one that feels generated.
 

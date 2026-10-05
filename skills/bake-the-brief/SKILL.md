@@ -5,7 +5,7 @@ description: Bake your project context into a brief once, so you never re-explai
 
 # Bake The Brief
 
-![Brief → explore → close-out](visual.png)
+![An agent session with the brief pinned, ideas tagged Exploring or Decided, and a close-out for the next session](visual.png)
 
 Bake the brief in once. Never re-explain your context again.
 
