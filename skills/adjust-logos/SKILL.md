@@ -5,7 +5,7 @@ description: Align a row of logos so it looks even to the eye, not to the math â
 
 # Adjust Logos
 
-![Mathematically equal vs optically even](visual.png)
+![A logo strip tuned optically inside a fixed band, with the commented CSS nudge](visual.png)
 
 A row of logos set to the same height never *looks* the same height. Wordmarks read heavier than icons, thin marks disappear next to bold ones, and a logo with a descender sits visually lower than its neighbors. Mathematical alignment produces optical chaos â€” and an agent asked to "clean up" a logo row will make it worse by snapping everything to one height.
 

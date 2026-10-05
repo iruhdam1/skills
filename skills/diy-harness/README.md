@@ -1,6 +1,6 @@
 # DIY Harness
 
-![DIY Harness loop](visual.png)
+![diy-harness report: readiness score, task picks and setup](visual.png)
 
 A skill that helps you **set up a harness on your own project** so coding agents stop reinventing layout, tokens, and ship steps every session.
 

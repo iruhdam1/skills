@@ -12,7 +12,7 @@ description: >
 
 # DIY Harness
 
-![DIY Harness loop](visual.png)
+![diy-harness report: readiness score, task picks and setup](visual.png)
 
 Help the human **set up a harness on their own project** — not a copy of [madhurimaram.com](https://madhurimaram.com).
 
