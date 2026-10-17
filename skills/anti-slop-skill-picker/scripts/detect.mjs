@@ -29,7 +29,7 @@ const MEDIA = {
   images: { label: "Images", exts: [], dirs: ["prompts", "image-prompts"], deps: ["replicate", "@fal-ai", "fal-ai", "@google/genai", "openai"], keywords: ["images.generate", "flux.1", "flux-pro", "flux-dev", "flux-schnell", "dall-e", "dalle", "midjourney", "nano-banana", "nanobanana", "imagen-", "stable-diffusion", "gpt-image", "fal.ai", "replicate.run"], names: ["prompt", "og", "cover", "thumbnail"] },
   video: { label: "Video and motion", exts: [".mp4", ".webm", ".mov", ".lottie"], dirs: ["compositions", "reels", "marketing", "video", "videos", "motion", "animations"], deps: ["remotion", "@remotion", "gsap", "lottie-web", "@lottiefiles", "framer-motion", "motion", "hyperframes", "@hyperframes", "three", "animejs"], keywords: ["ffmpeg"] },
   diagrams: { label: "Diagrams", exts: [".mmd", ".mermaid", ".excalidraw", ".drawio", ".puml", ".plantuml"], dirs: ["diagrams", "architecture"], deps: ["mermaid", "@excalidraw", "@mermaid-js"], keywords: ["```mermaid"] },
-  charts: { label: "Charts and data", exts: [".ipynb", ".csv", ".parquet"], dirs: ["dashboard", "dashboards", "charts", "data"], deps: ["d3", "recharts", "chart.js", "react-chartjs-2", "vega", "vega-lite", "plotly.js", "react-plotly.js", "echarts", "@observablehq/plot", "@nivo", "visx", "@visx"], keywords: ["import matplotlib", "import seaborn", "import altair", "import plotly", "from matplotlib", "from plotnine"] },
+  charts: { label: "Charts and data", exts: [".ipynb", ".csv", ".parquet"], dirs: ["dashboard", "dashboards", "charts", "data"], deps: ["d3", "recharts", "chart.js", "react-chartjs-2", "vega", "vega-lite", "plotly.js", "react-plotly.js", "echarts", "@observablehq/plot", "@nivo", "visx", "@visx", "plotly", "matplotlib", "seaborn", "altair", "bokeh", "plotnine"], keywords: ["import matplotlib", "import seaborn", "import altair", "import plotly", "from matplotlib", "from plotnine"] },
 };
 
 const hits = Object.fromEntries(Object.keys(MEDIA).map((k) => [k, { files: 0, weight: 0, deps: [], evidence: new Set() }]));
@@ -41,7 +41,7 @@ function add(medium, file, weight = 1) {
   const h = hits[medium];
   h.files += 1;
   h.weight += weight;
-  if (h.evidence.size < 6) h.evidence.add(file);
+  if (h.evidence.size < 8) h.evidence.add(file);
 }
 
 function walk(dir) {
@@ -65,14 +65,16 @@ function walk(dir) {
     if (e.name === "package.json") packageJsons.push(full);
     if (e.name === "requirements.txt" || e.name === "pyproject.toml") packageJsons.push(full);
 
+    const addedByName = new Set();
     for (const [medium, m] of Object.entries(MEDIA)) {
       if (m.exts.includes(ext)) {
+        addedByName.add(medium);
         const inContentDir = medium !== "text" || dirs.some((d) => m.dirs.includes(d));
         add(medium, rel, inContentDir ? 1 : 0.5);
         continue;
       }
-      if (medium === "images" && m.names.some((n) => basename(lower, ext).includes(n)) && [".md", ".json", ".txt", ".mjs", ".js", ".ts", ".py"].includes(ext) && dirs.some((d) => m.dirs.includes(d) || d.includes("prompt") || d.includes("social") || d.includes("og"))) { add(medium, rel); continue; }
-      if (medium === "text" && m.dirs.some((d) => dirs.includes(d)) && ext === ".json") { add(medium, rel); continue; }
+      if (medium === "images" && m.names.some((n) => basename(lower, ext).includes(n)) && [".md", ".json", ".txt", ".mjs", ".js", ".ts", ".py"].includes(ext) && dirs.some((d) => m.dirs.includes(d) || d.includes("prompt") || d.includes("social") || d.includes("og"))) { addedByName.add(medium); add(medium, rel); continue; }
+      if (medium === "text" && m.dirs.some((d) => dirs.includes(d)) && ext === ".json") { addedByName.add(medium); add(medium, rel); continue; }
     }
 
     // Content keywords, only in text-like files of a sane size.
@@ -83,7 +85,7 @@ function walk(dir) {
       let body = "";
       try { body = readFileSync(full, "utf8"); } catch { continue; }
       for (const [medium, m] of Object.entries(MEDIA)) {
-        if (!m.keywords) continue;
+        if (!m.keywords || addedByName.has(medium)) continue; // a file counts once per medium
         if (medium === "diagrams" && ext !== ".md" && ext !== ".mdx") continue;
         if (medium === "charts" && ![".py", ".ipynb"].includes(ext)) continue;
         if (medium === "images" && [".md", ".mdx"].includes(ext) && !dirs.some((d) => d.includes("prompt"))) continue;
@@ -115,7 +117,7 @@ for (const pj of packageJsons) {
       if (match && !hits[medium].deps.includes(match)) {
         if (medium === "images" && (match === "openai" || match === "@google/genai") && hits.images.files === 0) continue; // generic SDKs count only with image calls
         hits[medium].deps.push(match);
-        if (hits[medium].evidence.size < 6) hits[medium].evidence.add(`${relative(root, pj)} → ${match}`);
+        if (hits[medium].evidence.size < 8) hits[medium].evidence.add(`${relative(root, pj)} → ${match}`);
       }
     }
   }
@@ -148,6 +150,8 @@ if (asJson) {
     const role = r.key === result.primary ? "primary" : result.secondary.includes(r.key) ? "secondary" : r.present ? "present" : "absent";
     console.log(`${r.label.padEnd(20)} ${String(r.files).padStart(5)} files  ${String(r.deps.length).padStart(2)} deps  ${role}`);
     for (const e of r.evidence) console.log(`    ${e}`);
+    const more = r.files + r.deps.length - r.evidence.length;
+    if (more > 0) console.log(`    and ${more} more (evidence shows the first ${r.evidence.length}; the counts above are the full tally)`);
   }
   if (!present.length) console.log("\nNo medium above the threshold. Ask which medium the task is in before picking.");
 }
