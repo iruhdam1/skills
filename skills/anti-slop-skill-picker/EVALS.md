@@ -7,7 +7,7 @@ Manual rubric plus fixture shapes. Run before calling a prompt or catalog change
 ```bash
 node --test skills/anti-slop-skill-picker/scripts/detect.test.mjs   # detector unit tests (11 cases, fixtures built in a temp dir)
 node skills/anti-slop-skill-picker/scripts/check-catalog.mjs       # every GitHub repo and npm package in CATALOG.md still resolves
-grep -rnP "\x{2014}" skills/anti-slop-skill-picker                   # no em dashes anywhere in the skill
+grep -rn $'\xe2\x80\x94' skills/anti-slop-skill-picker               # no em dashes anywhere in the skill (UTF-8 bytes of the dash)
 ```
 
 Then the live evals: run the skill on each fixture below with a fresh agent, save the reply, and score it against the rubric row by row.
