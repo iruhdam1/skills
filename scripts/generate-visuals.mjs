@@ -43,6 +43,7 @@ const SKILLS = {
   "ghost-wireframe":      { bg:"#1d1f22", fg:"#e4e7ea" },
   "website-launch-checklist-prompt": { bg:"#3a1f08", fg:"#ffc04d" },
   "html-slide-presenter": { bg:"#3b0c34", fg:"#ff9fd8" },
+  "anti-slop-skill-picker": { bg:"#2f2a10", fg:"#f2e76b" },
 };
 
 const css = (t) => `${FF}
@@ -207,6 +208,18 @@ const P = {
  stage: win(40,110,760,540,"deck.html",`<div data-pin="1" class="f s" style="height:400px;padding:44px 48px;display:flex;flex-direction:column;gap:20px"><div class="l" style="width:62%;height:30px;background:var(--ghost-ink);opacity:.85"></div><div class="l" style="width:40%;height:30px;background:var(--ghost-ink);opacity:.85"></div><div style="margin-top:20px">${L([80,66,74],18,"m")}</div><div class="row" style="gap:12px;margin-top:auto"><div class="f hl" style="width:120px;height:60px"></div><div class="f" style="width:120px;height:60px"></div></div></div>
    <div class="row" style="justify-content:space-between;align-items:center;margin-top:16px"><span class="lab">← → keyboard</span><span class="lab">2 / 12</span></div>`)
   + `<div class="phone" style="left:620px;top:330px;width:220px;height:450px"><span data-side="left" data-pin="2" class="txt" style="font-size:15px">Speaker notes</span><div style="margin-top:16px">${L([90,80,95,60,85,70,50],14)}</div><div data-side="left" data-pin="3" class="row" style="gap:10px;position:absolute;left:16px;right:16px;bottom:22px"><span class="chip out" style="flex:1;justify-content:center">Prev</span><span class="chip ink" style="flex:1;justify-content:center">Next</span></div></div>` },
+
+"anti-slop-skill-picker": { title:"Pick the anti-slop skill that fits", sub:"It reads the repo, names what you're making, and hands you three resources per medium with install lines.",
+ pts:["Reads the repo and names the mix","Three picks per medium, never more","Install lines you can paste once"], say:`ask <b>"which anti-slop skill fits this repo?"</b>`,
+ stage: win(40,90,800,560,"anti-slop-skill-picker · report",`<div class="col" style="gap:18px;height:100%">
+   <div data-side="left" data-pin="1" class="row" style="gap:10px;align-items:center;flex-wrap:wrap"><span class="lab" style="margin-right:4px">Detected</span><span class="chip ink">UI · primary</span><span class="chip hl">Copy · 48 posts</span><span class="chip hl">Video · 6 reels</span><span class="chip out">Images</span><span class="chip out">Diagrams</span><span class="chip out">Charts</span></div>
+   <div class="f s" style="padding:0 18px">
+    ${[["UI","Kill AI Slop","rulebook · skill","components/ui"],["UI","hallmark audit","checker · CLI","app/page.tsx"],["UI","taste-skill","craft · skill","no references yet"],["Copy","no-ai-slop","checker · skill","content/posts"]].map(([m,p,t,w],i)=>`<div ${i===0?'data-side="left" data-pin="2"':""} class="row" style="gap:16px;align-items:center;padding:13px 0;${i?'border-top:1.5px solid var(--ghost-line)':''}"><span class="lab" style="width:48px">${m}</span><span class="txt" style="width:170px">${p}</span><span class="lab" style="width:150px">${t}</span><span class="lab mono" style="flex:1;text-align:right">${w}</span></div>`).join("")}
+   </div>
+   <div class="row" style="gap:12px;align-items:center"><span class="lab">Start with</span><span class="txt">Kill AI Slop, then run hallmark audit on the current build</span></div>
+   <div data-pin="3" class="win" style="position:relative;left:0;top:0;width:100%;height:150px;background:#15151a;color:#e8e8e8;box-shadow:none"><div class="wbar" style="background:#222228;color:#9a9aa3"><i style="background:#3a3a44"></i><i style="background:#3a3a44"></i><i style="background:#3a3a44"></i><span>install all picks</span></div><div class="wb mono" style="font-size:15px;line-height:1.7;padding:14px 18px"><div><span style="color:#8b8b95">$</span> npx skills add yetone/kill-ai-slop</div><div><span style="color:#8b8b95">$</span> npx skills add nutlope/hallmark</div><div><span style="color:#8b8b95">$</span> npx skills add petergyang/no-ai-slop --skill no-ai-slop</div></div></div>
+   <div class="row" style="gap:10px"><span class="chip out">Install the picks</span><span class="chip out">Run a checker now</span><span class="chip out">Add rules to CLAUDE.md</span></div>
+  </div>`) },
 };
 
 // hero: field of mini ghost windows, one per skill colour
@@ -215,9 +228,9 @@ const hero = () => {
  const PKG = readFileSync(join(VIS, "package-fill.svg"), "utf8").replace('fill="currentColor"', 'fill="currentColor" width="132" height="132"');
  const short = {"website-launch-checklist-prompt":"launch-checklist"};
  // Phosphor package-fill, one per skill in its own accent; no tile behind the icon
- const pkgs = Object.keys(SKILLS).map((k,i)=>{ const c=SKILLS[k]; const x=20+(i%4)*210, y=150+Math.floor(i/4)*280+(i%2?50:0);
+ const pkgs = Object.keys(SKILLS).map((k,i)=>{ const c=SKILLS[k]; const x=60+(i%3)*270, y=110+Math.floor(i/3)*250+(i%2?40:0);
   return `<div style="position:absolute;left:${x}px;top:${y}px;width:190px;display:flex;flex-direction:column;align-items:center;gap:14px"><span style="color:${c.fg};display:block;line-height:0">${PKG}</span><span style="font-size:19px;font-weight:500;color:var(--text);white-space:nowrap">${short[k]||k}</span></div>`;}).join("");
- return page(t,{title:"Skills for designers who build",sub:"Eight agent skills for designers who ship with AI. One install command.",pts:[],say:`call any skill by name`,stage:pkgs});
+ return page(t,{title:"Skills for designers who build",sub:"Nine agent skills for designers who ship with AI. One install command.",pts:[],say:`call any skill by name`,stage:pkgs});
 };
 
 const b = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
