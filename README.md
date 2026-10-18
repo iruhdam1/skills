@@ -33,6 +33,7 @@ Your taste, on every run.
 - **[design-lint](./skills/design-lint/SKILL.md)** — ESLint for design. A strict, judged QA pass with a fixed check catalog: layout, spacing, type, tokens, accessibility, responsive.
 - **[adjust-logos](./skills/adjust-logos/SKILL.md)** — Align logo rows optically, not mathematically — and stop agents from "fixing" the nudges that make them look right.
 - **[diy-harness](./skills/diy-harness/README.md)** — Audit a project, score harness readiness, pick tasks, then set up only what's missing so agents stop reinventing tokens and ship rituals.
+- **[anti-slop-skill-picker](./skills/anti-slop-skill-picker/SKILL.md)** — Read the repo, name what it's making (copy, UI, images, video, diagrams, charts), and get the three anti-slop resources that fit each medium, with install lines. Read-only; it never installs without asking.
 <!-- TDS-SYNC:START -->
 - **[ghost-wireframe](./skills/ghost-wireframe/SKILL.md)** — Skeleton UI / ghost wireframes with `--ghost-*` colour roles for landing chrome and loading states. Live tool at [Tiny Design Shop](https://tinydesignshop.com/tools/ghost-wireframe-generator).
 - **[website-launch-checklist-prompt](./skills/website-launch-checklist-prompt/SKILL.md)** — Pre-launch audit for SEO, OpenGraph, agent readiness, AEO, and compliance. Live tool at [Tiny Design Shop](https://tinydesignshop.com/tools/launch-checklist-prompt).
