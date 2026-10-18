@@ -52,7 +52,7 @@ One line, then the evidence: "This repo is mostly UI (Next.js + Tailwind, 212 co
 
 Open [CATALOG.md](CATALOG.md). For the **primary** medium pick at most three: one **rulebook** (stops slop while building), one **checker** (finds slop after), and one **craft** skill (makes it distinctive rather than only clean). For each **secondary** medium pick at most two. Nothing for media that are not present.
 
-Take the "start here" rows unless the evidence points to an "also" row: React detected, offer fluid-functionalism; HyperFrames or GSAP detected, offer motionmaxxing; no brand tokens anywhere, offer brandkit. Give the install line exactly as the catalog has it, and a one-line reason that names the file or package the detector found. If a medium has no row of one type (text has no craft row yet), say so in one line under the table; do not add a placeholder row. Never offer anything from the catalog's "Dropped" list.
+Take the "start here" rows unless the evidence points to an "also" row: React detected, offer fluid-functionalism; HyperFrames or GSAP detected, offer motionmaxxing; no brand tokens anywhere, offer brandkit. Give the install line exactly as the catalog has it, and a one-line reason that names the file or package the detector found. If a medium has no row of one type, say so in one line under the table; do not add a placeholder row. Never offer anything from the catalog's "Dropped" list.
 
 ### 4. Offer next steps
 
