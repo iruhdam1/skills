@@ -1,6 +1,7 @@
 ---
 name: anti-slop-skill-picker
-description: Look at what a repo is making (copy, UI, images, video and motion, diagrams, charts and data) and recommend the few anti-slop resources that fit each medium, a rulebook, a checker and a craft skill, with install commands. Use when the user says "anti-slop", "de-slop this repo", "this looks AI-generated", "make it not look AI", "pick a skill for this", "which skill should I install", "which resources fit this project", "guardrails before I start", or mentions purple gradients, em dashes everywhere, generic copy, glossy AI images, linear fades, box-grid diagrams or chartjunk. Also use at the start of a new design, writing, image, video, diagram or chart task. Read-only: it recommends and never installs anything without asking.
+description: >-
+  Look at what a repo is making (copy, UI, images, video and motion, diagrams, charts and data) and recommend the few anti-slop resources that fit each medium, a rulebook, a checker and a craft skill, with install commands. Use when the user says "anti-slop", "de-slop this repo", "this looks AI-generated", "make it not look AI", "pick a skill for this", "which skill should I install", "which resources fit this project", "guardrails before I start", or mentions purple gradients, em dashes everywhere, generic copy, glossy AI images, linear fades, box-grid diagrams or chartjunk. Also use at the start of a new design, writing, image, video, diagram or chart task. Read-only, it recommends and never installs anything without asking.
 ---
 
 # Anti-Slop Skill Picker
