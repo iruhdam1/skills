@@ -68,5 +68,6 @@ How to stub: create each folder under a scratch directory with the files named a
 | 2026-10-17 | Mixed site (website repo) | same | 12/12 | UI 3 picks, Text 2, Video 2; diagrams named as a third secondary with no picks; read files to confirm evidence |
 | 2026-10-17 | Request wins | same | 12/12 | Text primary from the request on a UI-only repo; UI picks kept to two and marked "for later" |
 | 2026-10-17 | Stand out | same | 12/12 | the craft pick (lieflat-charts) is tied to the "stand out" ask |
+| 2026-10-18 | Markdown posts | same | 12/12 | after voice-extractor joined the catalog as the text craft row: three picks, "start with" names the craft pick so the rulebook protects the author's own voice |
 
 Detector unit tests: 11/11. Catalog check: 42 repos and 4 npm packages resolve, 6 page-only rows listed. Findings fixed during the run: a notebook was counted twice (extension and import), Python plotting libraries in `requirements.txt` were not counted as dependencies, and the evidence list was silently truncated at six paths, which led two agents to say "five posts" where there were six; the detector now says "and N more".
