@@ -74,7 +74,7 @@ Also in `compact-prompt.txt` beside this skill.
 ## Live tool
 
 - Generator: https://tinydesignshop.com/tools/ghost-wireframe-generator
-- Skill page (copy/download): https://tinydesignshop.com/tools/ghost-wireframe-generator-skill
+- Skill page (copy/download): https://tinydesignshop.com/skills/ghost-wireframe
 
 Browser tool for layout pick + Single/Combo view + palette + PNG/SVG/HTML export. SVG convert and Copy to Figma are later phases — do not assume they exist in the skill.
 

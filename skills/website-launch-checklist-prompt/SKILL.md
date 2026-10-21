@@ -29,7 +29,7 @@ Audit and implement missing launch requirements before go-live.
 4. Audit all applicable areas (skip what clearly does not apply)
 5. Return gap analysis, ready-to-copy snippets, agent-readiness fixes, and a priority fix list
 
-The live tool at https://tinydesignshop.com/tools/launch-checklist-prompt embeds the isitagentready.com scan when a URL is provided.
+The live tool at https://tinydesignshop.com/tools/launch-checklist-prompt embeds the isitagentready.com scan when a URL is provided. Skill page (copy/download): https://tinydesignshop.com/skills/website-launch-checklist-prompt
 
 ## Audit areas
 
